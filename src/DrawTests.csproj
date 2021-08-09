@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\dependencies\DrawTests.Dependencies.csproj" />
+    <ProjectReference Include="..\..\Hypar\Elements\Elements\src\Elements.csproj" />
+    <ProjectReference Include="..\..\Hypar\Hypar\Hypar.Functions\src\Hypar.Functions.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+</Project>
