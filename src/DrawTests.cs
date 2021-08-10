@@ -57,8 +57,11 @@ namespace DrawTests
                     arrows.Add((ao, down, 1.0 - height / 2, Colors.Green));
                 }
                 var modelText = new ModelText(texts, FontSize.PT36, input.TextScale);
+                modelText.Name = "BeamLength";
                 model.AddElement(modelText);
+
                 var modelArrows = new ModelArrows(arrows);
+                modelArrows.Name = "BeamArrow";
                 model.AddElement(modelArrows);
             }
 

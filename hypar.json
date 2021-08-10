@@ -2,9 +2,17 @@
   "$schema": "https://hypar.io/Schemas/Function.json",
   "id": "84ab6416-f865-4822-a8c4-c4024a77a09d",
   "name": "DrawTests",
-  "description": "The DrawTests function.",
+  "description": "An example for how to draw arrows and text.",
   "language": "C#",
-  "display_name": "Results Visualization",
+  "display_name": "Labeling Example",
+  "filters": {
+    "Beam Arrows": {
+      "context": "[*Name=BeamArrow]"
+    },
+    "Beam Length": {
+      "context": "[*Name=BeamLength]"
+    }
+  },
   "model_dependencies": [
     {
       "name": "Structure",
@@ -14,23 +22,10 @@
   "input_schema": {
     "type": "object",
     "properties": {
-      "X Values": {
-        "type": "number",
-        "description": "The number of values in the X direction.",
-        "minimum": 1,
-        "maximum": 10,
-        "multipleOf": 1
-      },
-      "Y Values": {
-        "type": "number",
-        "description": "The number of values in the Y direction.",
-        "minimum": 1,
-        "maximum": 10,
-        "multipleOf": 1
-      },
       "Text Scale": {
         "type": "number",
         "description": "The scale of the text.",
+        "default": 10,
         "minimum": 1,
         "maximum": 100,
         "multipleOf": 1

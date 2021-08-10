@@ -28,17 +28,15 @@ namespace DrawTests
     {
         [Newtonsoft.Json.JsonConstructor]
         
-        public DrawTestsInputs(double @xValues, double @yValues, double @textScale, string bucketName, string uploadsBucket, Dictionary<string, string> modelInputKeys, string gltfKey, string elementsKey, string ifcKey):
+        public DrawTestsInputs(double @textScale, string bucketName, string uploadsBucket, Dictionary<string, string> modelInputKeys, string gltfKey, string elementsKey, string ifcKey):
         base(bucketName, uploadsBucket, modelInputKeys, gltfKey, elementsKey, ifcKey)
         {
             var validator = Validator.Instance.GetFirstValidatorForType<DrawTestsInputs>();
             if(validator != null)
             {
-                validator.PreConstruct(new object[]{ @xValues, @yValues, @textScale});
+                validator.PreConstruct(new object[]{ @textScale});
             }
         
-            this.XValues = @xValues;
-            this.YValues = @yValues;
             this.TextScale = @textScale;
         
             if(validator != null)
@@ -47,20 +45,10 @@ namespace DrawTests
             }
         }
     
-        /// <summary>The number of values in the X direction.</summary>
-        [Newtonsoft.Json.JsonProperty("X Values", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [System.ComponentModel.DataAnnotations.Range(1D, 10D)]
-        public double XValues { get; set; }
-    
-        /// <summary>The number of values in the Y direction.</summary>
-        [Newtonsoft.Json.JsonProperty("Y Values", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [System.ComponentModel.DataAnnotations.Range(1D, 10D)]
-        public double YValues { get; set; }
-    
         /// <summary>The scale of the text.</summary>
         [Newtonsoft.Json.JsonProperty("Text Scale", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.Range(1D, 100D)]
-        public double TextScale { get; set; }
+        public double TextScale { get; set; } = 10D;
     
     
     }
