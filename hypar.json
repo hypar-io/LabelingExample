@@ -15,6 +15,7 @@
   },
   "model_dependencies": [
     {
+      "autohide": false,
       "name": "Structure",
       "optional": false
     }
@@ -23,12 +24,13 @@
     "type": "object",
     "properties": {
       "Text Scale": {
-        "type": "number",
-        "description": "The scale of the text.",
+        "multipleOf": 1,
         "default": 10,
-        "minimum": 1,
+        "description": "The scale of the text.",
         "maximum": 100,
-        "multipleOf": 1
+        "type": "number",
+        "$hyparOrder": 0,
+        "minimum": 1
       }
     }
   },
@@ -41,5 +43,8 @@
     }
   ],
   "repository_url": "https://github.com/hypar-io/function",
-  "last_updated": "0001-01-01T00:00:00"
+  "source_file_key": null,
+  "preview_image": null,
+  "thumbnail_id": null,
+  "last_updated": "2021-08-10T00:26:02.385694"
 }
